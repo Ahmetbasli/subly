@@ -1,9 +1,43 @@
 import React, { FC } from "react";
-import CardProps from "src/view/components/Card/types";
-import styles from "src/view/components/Card/index.module.css";
+import { useState } from "react";
+import Hero from "./Hero";
+import Info from "./Info";
+import CardProps from "./types";
+import styles from "./index.module.css";
 
 const Card: FC<CardProps> = ({ item }) => {
-  return <div>hello</div>;
+  const { cover, createdAt, languages, name, status, updatedAt } = item;
+  const [isHovered, setIsHovered] = useState(false);
+
+  const pickStyle = () => {
+    if (status !== "ready" || !isHovered) return;
+    return styles.hover;
+  };
+  const renderHero = () => {
+    if (status === "ready") {
+      return <Hero isHovered={isHovered} languages={languages} cover={cover} />;
+    } else if (status === "error") {
+      return null;
+    } else {
+      return null;
+    }
+  };
+
+  return (
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`${styles.container}  ${pickStyle()} `}
+    >
+      {renderHero()}
+      <Info
+        updatedAt={updatedAt}
+        createdAt={createdAt}
+        name={name}
+        status={status}
+      />
+    </div>
+  );
 };
 
 export default Card;

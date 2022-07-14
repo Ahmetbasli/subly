@@ -1,0 +1,13 @@
+.info {
+  margin: 10px;
+}
+.title {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+}
+.monthPassedMessage {
+  font-size: 12px;
+  color: gray;
+  margin: 0;
+}
