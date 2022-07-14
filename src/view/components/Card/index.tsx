@@ -4,6 +4,7 @@ import ErrorHero from "./ErrorHero";
 import Hero from "./Hero";
 import Info from "./Info";
 import CardProps from "./types";
+import TranscribingHero from "./TranscribingHero";
 import styles from "./index.module.css";
 
 const Card: FC<CardProps> = ({ item }) => {
@@ -20,7 +21,7 @@ const Card: FC<CardProps> = ({ item }) => {
     } else if (status === "error") {
       return <ErrorHero />;
     } else {
-      return null;
+      return <TranscribingHero cover={cover} progressRatio={100} />;
     }
   };
 
