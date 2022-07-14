@@ -1,4 +1,5 @@
 import { FC } from "react";
+import texts from "src/view/static-texts/texts.json";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import TranscribingHeroProps from "./types";
 import styles from "./index.module.css";
@@ -8,7 +9,7 @@ const TranscribingHero: FC<TranscribingHeroProps> = ({
 }) => {
   return (
     <div className={styles.hero}>
-      <p className={styles.text}>Transcribing subtitles</p>
+      <p className={styles.text}>{texts.transcribingTitle}</p>
       <ProgressBar
         className={styles.progressBar}
         animated
