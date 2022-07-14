@@ -1,3 +1,9 @@
+:root {
+  --primary-color: rgb(136, 44, 186);
+  --secondary-color: rgb(110, 92, 92);
+  --white-color: white;
+  --light-danger-color: rgb(255, 223, 223);
+}
 * {
   box-sizing: border-box;
 }
