@@ -1,11 +1,4 @@
-export type MediaItems = MediaItem[];
-
-export default interface MediaItem {
-  id: number;
-  name: string;
-  cover: string;
-  languages: string[];
-  status: "ready" | "error" | "transcribing";
-  createdAt: string;
-  updatedAt: string;
-}
+import type { Media } from "./Schemas";
+export type MediaItems = Media["media"];
+type MediaItem = MediaItems[0];
+export default MediaItem;
