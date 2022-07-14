@@ -25,7 +25,7 @@ function App() {
     ));
 
     return (
-      <Container>
+      <Container className={styles.container}>
         <Row xs={1} md={2} lg={3}>
           {cards}
         </Row>
