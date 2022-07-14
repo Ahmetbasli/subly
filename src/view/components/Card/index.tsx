@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useState } from "react";
+import ErrorHero from "./ErrorHero";
 import Hero from "./Hero";
 import Info from "./Info";
 import CardProps from "./types";
@@ -17,7 +18,7 @@ const Card: FC<CardProps> = ({ item }) => {
     if (status === "ready") {
       return <Hero isHovered={isHovered} languages={languages} cover={cover} />;
     } else if (status === "error") {
-      return null;
+      return <ErrorHero />;
     } else {
       return null;
     }

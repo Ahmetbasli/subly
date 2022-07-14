@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-
 import HeroProps from "./types";
-import styles from "./index.module.css";
 import HoveredHero from "./HoveredHero";
+import styles from "./index.module.css";
 
 const Hero: FC<HeroProps> = ({ cover, isHovered, languages }) => {
   return (

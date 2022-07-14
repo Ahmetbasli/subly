@@ -1,6 +1,9 @@
 {
   "editBtn": "Edit",
+  "deleteBtn": "Delete file",
+  "ReportIssueBtn": "Report issue",
   "languages": "languages",
   "transcribingInfo": "Transcribing",
-  "errorInfo": "Error In processing"
+  "errorInfo": "Error In processing",
+  "errorMessage": "An error occured while processing your file. Delete file to try again, and report issues if the problem persists."
 }
