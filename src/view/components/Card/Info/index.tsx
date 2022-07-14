@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import texts from "src/view/static-texts/texts.json";
-import getMonthDifference from "src/utils/getMonthDifference";
+import getMonthDifference from "src/view/utils/getMonthDifference";
 import styles from "src/view/components/Card/Info/index.module.css";
 import InfoProps from "./types";
 
