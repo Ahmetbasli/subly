@@ -1,4 +1,6 @@
 import React from "react";
+import "src/view/global-styles/global.css";
+import "src/view/global-styles/customizeBoostrap.scss";
 import api from "src/infrastructure/services/api";
 import { MediaItems } from "src/infrastructure/services/api/MediaItems/types";
 import useFetch from "src/view/hooks/useFetch";
@@ -18,7 +20,7 @@ function App() {
 
     const cards = mediaItems.map((item) => (
       <Col key={item.id}>
-        <Card key={item.id} item={item} />
+        <Card item={item} />
       </Col>
     ));
 
