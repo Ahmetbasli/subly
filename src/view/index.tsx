@@ -5,9 +5,8 @@ import api from "src/infrastructure/services/api";
 import { MediaItems } from "src/infrastructure/services/api/MediaItems/types";
 import useFetch from "src/view/hooks/useFetch";
 import Card from "src/view/components/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import GridContainer from "src/view/components/GridContainer";
 import styles from "src/view/index.module.css";
 
 function App() {
@@ -18,19 +17,11 @@ function App() {
   const renderCards = () => {
     if (mediaItems === null) return;
 
-    const cards = mediaItems.map((item) => (
+    return mediaItems.map((item) => (
       <Col key={item.id}>
         <Card item={item} />
       </Col>
     ));
-
-    return (
-      <Container className={styles.container}>
-        <Row xs={1} md={2} lg={3}>
-          {cards}
-        </Row>
-      </Container>
-    );
   };
   return (
     <>
@@ -45,7 +36,9 @@ function App() {
           className={styles.logo}
         ></img>
       </header>
-      {renderCards()}
+      <GridContainer xs={1} md={2} lg={3}>
+        {renderCards()}
+      </GridContainer>
     </>
   );
 }
