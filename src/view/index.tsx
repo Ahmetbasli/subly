@@ -1,14 +1,36 @@
 import React, { useEffect } from "react";
-import api from "src/infrastructure/services/api/";
+import api from "src/infrastructure/services/api";
+
+import { MediaItems } from "src/infrastructure/services/api/MediaItems/types";
 import styles from "src/view/index.module.css";
+import Card from "./components/Card";
+import useFetch from "./hooks/useFetch";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function App() {
-  useEffect(() => {
-    (async () => {
-      const res = await api.MediaItems.getAll();
-      console.log(res);
-    })();
-  });
+  const { data: mediaItems } = useFetch<MediaItems | null>(
+    api.MediaItems.getAll
+  );
+
+  const renderCards = () => {
+    if (mediaItems === null) return;
+
+    const cards = mediaItems.map((item) => (
+      <Col key={item.id}>
+        <Card key={item.id} item={item} />
+      </Col>
+    ));
+
+    return (
+      <Container>
+        <Row xs={1} md={2} lg={3}>
+          {cards}
+        </Row>
+      </Container>
+    );
+  };
   return (
     <>
       <header className={styles.header}>
@@ -22,6 +44,7 @@ function App() {
           className={styles.logo}
         ></img>
       </header>
+      {renderCards()}
     </>
   );
 }
