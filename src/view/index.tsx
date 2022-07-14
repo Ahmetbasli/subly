@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import api from "src/infrastructure/services/api";
-
 import { MediaItems } from "src/infrastructure/services/api/MediaItems/types";
-import styles from "src/view/index.module.css";
-import Card from "./components/Card";
-import useFetch from "./hooks/useFetch";
+import useFetch from "src/view/hooks/useFetch";
+import Card from "src/view/components/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import styles from "src/view/index.module.css";
 
 function App() {
   const { data: mediaItems } = useFetch<MediaItems | null>(

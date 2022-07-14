@@ -1,0 +1,26 @@
+.btn {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px;
+  margin-right: 9px;
+  font-size: 16px;
+  transition: transform 0.1s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.primary {
+  border: none;
+  color: white;
+  background-color: var(--primary-color);
+}
+.secondary {
+  border: 0.5px solid var(--secondary-color);
+}
+.whiteOutline {
+  background: none;
+  color: white;
+  border: 1px solid var(--white-color);
+  font-size: 12px;
+  padding: 5px 30px;
+}
