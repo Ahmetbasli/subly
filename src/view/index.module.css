@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 .logo {
   margin-left: 5px;
-  background: gray;
+  background: var(--primary-color);
   padding: 10px;
   border-radius: 4px;
 }
